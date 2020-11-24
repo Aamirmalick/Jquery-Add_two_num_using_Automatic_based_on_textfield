@@ -1,0 +1,34 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+<h1>jQuery live Try</h1>
+<form>
+    <input type="text" placeholder="Number 1" class="num1 key">
+    <input type="text" placeholder="Number 2" class="num2 key">
+    <br><br>
+    Sum: <input type="text" class="sum" readonly="readonly"><br><br><br>
+</form>
+</div>
+
+<script>
+$(document).ready(function(){
+        $(".sum").val("0");
+        $(".key").val("");
+
+        function calc(){
+     var $num1=parseFloat($(".num1").val());
+	var $num2=parseFloat($(".num2").val());
+        $(".sum").val($num1+$num2);
+    }
+    $(".key").keyup(function(){
+        calc();
+    });
+});
+</script>
+</body>
+</html>
